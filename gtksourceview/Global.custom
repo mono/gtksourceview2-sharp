@@ -1,5 +1,5 @@
 
-		[DllImport("gtksourceview-1.0")]
+		[DllImport("gtksourceview-2.0")]
 		static extern IntPtr gtk_keyword_list_tag_new (string id, string name, IntPtr keywords, bool case_sensitive, bool match_empty_string_at_beginning, bool match_empty_string_at_end, string beginning_regex, string end_regex);
                                                                                 
 		public static Gtk.TextTag KeywordListTagNew (string id, string name, string[] keywords, bool case_sensitive, bool match_empty_string_at_beginning, bool match_empty_string_at_end, string beginning_regex, string end_regex)

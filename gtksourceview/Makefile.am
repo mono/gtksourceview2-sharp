@@ -1,4 +1,4 @@
-LIBRARY_NAME=	gtksourceview-sharp
+LIBRARY_NAME=	gtksourceview2-sharp
 LIBRARY=	$(LIBRARY_NAME).dll
 APIS=		gtksourceview-api.xml
 
@@ -8,7 +8,7 @@ EXTRA_DIST = $(sources) $(customs) Gtk.metadata gtksourceview-api.raw AssemblyIn
 
 DISTCLEANFILES = AssemblyInfo.cs
 
-noinst_DATA = gtksourceview-sharp.dll
+noinst_DATA = gtksourceview2-sharp.dll
 
 apidir = $(gtksharp_prefix)/share/gapi-2.0
 api_DATA = gtksourceview-api.xml
@@ -22,7 +22,7 @@ gtksourceview-api.xml:
 
 generated-stamp: $(APIS) $(customs) $(sources) Gtk.metadata
 	$(GAPI_CODEGEN) $(GTK_SHARP_CFLAGS) --generate $(APIS) \
-	--outdir=generated --customdir=. --assembly-name=gtksourceview-sharp && touch generated-stamp
+	--outdir=generated --customdir=. --assembly-name=gtksourceview2-sharp && touch generated-stamp
 
 sources = \
 GtkSourceView.cs
@@ -33,7 +33,7 @@ customs = \
 Global.custom \
 SourceBuffer.custom \
 SourceLanguage.custom \
-SourceLanguagesManager.custom \
+SourceLanguageManager.custom \
 SourceStyleScheme.custom \
 SourceTagTable.custom
 

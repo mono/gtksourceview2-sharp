@@ -9,7 +9,7 @@
 //
 
 
-[DllImport("gtksourceview-1.0")]
+[DllImport("gtksourceview-2.0")]
 static extern bool gtk_source_iter_forward_search(ref Gtk.TextIter _iter, 
 						 string _str,
 						 int _flags,
@@ -25,7 +25,7 @@ public bool ForwardSearch (Gtk.TextIter iter, string str, GtkSourceView.SourceSe
 
 
 
-[DllImport("gtksourceview-1.0")]
+[DllImport("gtksourceview-2.0")]
 static extern bool gtk_source_iter_backward_search(ref Gtk.TextIter _iter, 
 						 string _str,
 						 int _flags,
@@ -39,7 +39,7 @@ public bool BackwardSearch (Gtk.TextIter iter, string str, GtkSourceView.SourceS
 	return ret;
 }
 
-[DllImport("gtksourceview-1.0")]
+[DllImport("gtksourceview-2.0")]
 static extern IntPtr gtk_source_buffer_get_markers_in_region(IntPtr raw, ref Gtk.TextIter begin, ref Gtk.TextIter end);
                                                                                 
 public SourceMarker[] GetMarkersInRegion (Gtk.TextIter begin, Gtk.TextIter end) {
@@ -51,3 +51,26 @@ public SourceMarker[] GetMarkersInRegion (Gtk.TextIter begin, Gtk.TextIter end) 
 	return result;
 }
 
+
+[DllImport("gtksourceview-2.0")]
+static extern IntPtr gtk_source_buffer_new_with_language(IntPtr language);
+
+//need to check whether the language is null, or we get a bad SourceBuffer object, 
+//and everything goes downhill from there
+public SourceBuffer (GtkSourceView.SourceLanguage language) : base (IntPtr.Zero)
+{
+	if (language == null)
+		throw new ArgumentNullException("language");
+	
+	if (GetType () != typeof (SourceBuffer)) {
+		ArrayList vals = new ArrayList();
+		ArrayList names = new ArrayList();
+		if (language != null) {
+			names.Add ("language");
+			vals.Add (new GLib.Value (language));
+		}
+		CreateNativeObject ((string[])names.ToArray (typeof (string)), (GLib.Value[])vals.ToArray (typeof (GLib.Value)));
+		return;
+	}
+	Raw = gtk_source_buffer_new_with_language(language == null ? IntPtr.Zero : language.Handle);
+}

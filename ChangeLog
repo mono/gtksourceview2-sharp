@@ -1,3 +1,38 @@
+2007-08-20  Michael Mutchinson <m.j.hutchinson@gmail.com>
+
+	* configure.in: Re-version library to 1.90.3 to match unmanaged 
+	  library, as we are now tracking the 2.x beta series.
+	  
+	* gtksourceview/SourceStyleScheme.custom,  
+	  gtksourceview/gtksourceview-api.raw,
+	  gtksourceview/SourceBuffer.custom,
+	  gtksourceview/Gtk.metadata,
+	  gtksourceview/GtkSourceView.cs,
+	  gtksourceview/SourceLanguageManager.custom,
+	  gtksourceview/Global.custom,
+	  gtksourceview/Makefile.am,
+	  gtksourceview/SourceLanguage.custom,
+	  gtksourceview/SourceTagTable.custom: Update API and custom 
+	  files for new 2.x series of unmanaged library.
+	  
+	* gtksourceview2-sharp.pc.in,
+	  doc/gtksourceview2-sharp-docs.source,
+	  gtksourceview2-sharp-sources.xml,
+	  gtksourceview/gtksourceview2-sharp.dll.config.in: Renamed from 1.0 
+	  version and updated.
+	  
+	* Makefile.am, doc/Makefile.am, sample/Makefile.am, sources/makefile:
+	  Fix up the build system for filename and version changes.
+	  
+	* .cvsignore, sources/.cvsignore, gtksourceview/.cvsignore,
+	  doc/.cvsignore: Remove irrelevant files.
+	  
+	* sample/SourceViewTest.cs: Update to 2.0 language APIs.
+	
+	* sample/PrintSample.cs: Removed; printing API has gone.
+	
+	Update svn:ignores on all directories.
+
 2007-04-20  Wade Berrier  <wberrier@novell.com>
 
 	* configure.in: version bump -> 0.11 (been too long)

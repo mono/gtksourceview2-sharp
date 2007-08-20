@@ -44,9 +44,7 @@ class SourceViewTest
 
 	SourceBuffer CreateBuffer ()
 	{
-		SourceLanguagesManager manager = new SourceLanguagesManager ();
-		SourceLanguage lang = manager.GetLanguageFromMimeType ("text/x-csharp");
-
+		SourceLanguage lang = SourceLanguageManager.Default.GetLanguageById ("c-sharp");
 		SourceBuffer buffer = new SourceBuffer (lang);
 		buffer.Highlight = true;
 		StreamReader sr = File.OpenText (filename);

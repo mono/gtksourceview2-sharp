@@ -1,5 +1,5 @@
 if ENABLE_MONODOC
-TARGETS = gtksourceview-sharp-docs.zip gtksourceview-sharp-docs.tree gtksourceview-sharp-docs.source
+TARGETS = gtksourceview2-sharp-docs.zip gtksourceview2-sharp-docs.tree gtksourceview2-sharp-docs.source
 docsdir = `$(PKG_CONFIG) --variable sourcesdir monodoc`
 docs_DATA = $(TARGETS)
 else
@@ -8,14 +8,14 @@ docsdir = $(datadir)
 docs_DATA =
 endif
 
-gtksourceview-sharp-docs.zip gtksourceview-sharp-docs.tree: $(srcdir)/en/*/*.xml $(srcdir)/en/*.xml
-	$(MDASSEMBLER) --ecma $(srcdir)/en -o gtksourceview-sharp-docs
+gtksourceview2-sharp-docs.zip gtksourceview2-sharp-docs.tree: $(srcdir)/en/*/*.xml $(srcdir)/en/*.xml
+	$(MDASSEMBLER) --ecma $(srcdir)/en -o gtksourceview2-sharp-docs
 
 update:
 	rm -Rf ./en/GtkSourceView/* ./en/GtkSharp.GtksourceviewSharp/*
-	$(MONODOCER) -updateto:./en -path:. -assembly:../gtksourceview/gtksourceview-sharp.dll
+	$(MONODOCER) -updateto:./en -path:. -assembly:../gtksourceview/gtksourceview2-sharp.dll
 
-CLEANFILES = gtksourceview-sharp-docs.zip gtksourceview-sharp-docs.tree
+CLEANFILES = gtksourceview2-sharp-docs.zip gtksourceview2-sharp-docs.tree
 
 EXTRA_DIST = $(TARGETS)
 
@@ -27,4 +27,4 @@ dist-hook:
 
 
 push:
-	scp gtksourceview-sharp-docs.* root@www.go-mono.com:/usr/lib/monodoc/sources/
+	scp gtksourceview2-sharp-docs.* root@www.go-mono.com:/usr/lib/monodoc/sources/

@@ -1,4 +1,1 @@
 
-		string[] StyleNames {
-                        get;
-                }

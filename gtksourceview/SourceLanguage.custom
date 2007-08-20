@@ -1,23 +1,6 @@
 
-		[DllImport("gtksourceview-1.0")]
-		static extern IntPtr gtk_source_language_get_tags(IntPtr raw);
-
-	 	public SourceTag[] Tags {
-                        get {
-                                IntPtr raw_ret = gtk_source_language_get_tags(Handle);
-                                GLib.SList list = new GLib.SList(raw_ret);
-				SourceTag[] result = new SourceTag [list.Count];
-				for (int i = 0; i < list.Count; i++)
-					result [i] = list [i] as SourceTag;
-				return result;	
-                        }
-                }
-
-		[DllImport("gtksourceview-1.0")]
+		[DllImport("gtksourceview-2.0")]
 		static extern IntPtr gtk_source_language_get_mime_types(IntPtr raw);
-                                                                                
-		[DllImport("gtksourceview-1.0")]
-		static extern void gtk_source_language_set_mime_types(IntPtr raw, IntPtr mime_types);
 
 		public string[] MimeTypes {
                         get {
@@ -27,11 +10,5 @@
 				for (int i = 0; i < list.Count; i++)
 					result [i] = list [i] as string;
 				return result;	
-			}
-			set {
-				GLib.SList list = new GLib.SList (typeof (string));
-				foreach (string s in value)
-					list.Append (s);
-				gtk_source_language_set_mime_types (Handle, list.Handle);
 			}
 		}

@@ -1,5 +1,5 @@
 		
-		[DllImport("gtksourceview-1.0")]
+		[DllImport("gtksourceview-2.0")]
 		static extern void gtk_source_tag_table_add_tags(IntPtr raw, IntPtr tags);
                                                                                 
 		public void AddTags(SourceTag[] tags) {
