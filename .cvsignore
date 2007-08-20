@@ -1,0 +1,15 @@
+aclocal.m4
+autom4te.cache
+config.guess
+config.log
+config.status
+config.sub
+configure
+libtool
+ltmain.sh
+makefile
+makefile.in
+install-sh
+missing
+mkinstalldirs
+gtksourceview-sharp.pc

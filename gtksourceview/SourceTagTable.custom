@@ -1,0 +1,10 @@
+		
+		[DllImport("gtksourceview-1.0")]
+		static extern void gtk_source_tag_table_add_tags(IntPtr raw, IntPtr tags);
+                                                                                
+		public void AddTags(SourceTag[] tags) {
+			GLib.SList list = new GLib.SList (typeof (SourceTag));
+			foreach (SourceTag tag in tags)
+				list.Append (tag.Handle);
+			gtk_source_tag_table_add_tags(Handle, list.Handle);
+		}

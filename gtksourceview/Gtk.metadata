@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<metadata>
+  <attr path="/api/namespace/object[@cname='GtkSourceBuffer']/constructor[@cname='gtk_source_buffer_new']/*/*[@name='table']" name="property_name">tag-table</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceBuffer']/signal[@name='CanRedo']" name="name">CanRedoFired</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceBuffer']/signal[@name='CanUndo']" name="name">CanUndoFired</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceMarker']" name="parent">GtkTextMark</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceUndoManager']/signal[@name='CanRedo']" name="name">CanRedoFired</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceUndoManager']/signal[@name='CanUndo']" name="name">CanUndoFired</attr>
+  <attr path="/api/namespace/class[@name='Source']/method[@name='IterFindMatchingBracket']/*/*[@type='GtkTextIter*']" name="pass_as">ref</attr>
+  <attr path="//namespace" name="name">GtkSourceView</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceBuffer']/method[@name='GetMarkersInRegion']" name="hidden">1</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceLanguage']/method[@name='GetMimeTypes']" name="hidden">1</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceLanguage']/method[@name='SetMimeTypes']" name="hidden">1</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceLanguage']/method[@name='GetTags']" name="hidden">1</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceLanguagesManager']/method[@name='GetAvailableLanguages']" name="hidden">1</attr>
+  <attr path="/api/namespace/interface[@cname='GtkSourceStyleScheme']/method[@name='GetStyleNames']" name="hidden">1</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceTagTable']/method[@name='AddTags']" name="hidden">1</attr>
+  <attr path="/api/namespace/class[@name='Global']/method[@name='KeywordListTagNew']" name="hidden">1</attr>
+</metadata>

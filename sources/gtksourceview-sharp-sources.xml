@@ -1,0 +1,9 @@
+<gapi-parser-input>
+  <api filename="../gtksourceview/gtksourceview-api.raw">
+    <library name="gtksourceview-1.0">
+      <namespace name="Gtk">
+        <dir>gtksourceview-1.0.0/gtksourceview</dir>
+      </namespace>
+    </library>
+  </api>
+</gapi-parser-input>

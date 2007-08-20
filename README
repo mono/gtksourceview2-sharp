@@ -1,0 +1,8 @@
+============
+Requirements
+============
+ 
+mono-0.28
+gtk-sharp-0.13
+gtksourceview-0.7.0
+automake-1.7
