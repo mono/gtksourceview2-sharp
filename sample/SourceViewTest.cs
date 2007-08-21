@@ -6,12 +6,28 @@ using GtkSourceView;
 class SourceViewTest
 {
 	static string filename;
+	static SourceLanguage language;
 
 	static void Main (string[] args)
 	{
-		if (args.Length != 1 || !File.Exists (args[0]))
+		if (args.Length == 0)
 			PrintUsage ();
+		
 		filename = args[0];
+		if (!File.Exists (filename)) {
+			Console.WriteLine ("File not found: {0}", filename);
+			return;
+		}
+		
+		string lang = (args.Length > 1)?  args[1] : "c-sharp";
+		language = SourceLanguageManager.Default.GetLanguageById (lang);
+		if (language == null) {
+			Console.WriteLine ("Invalid language ID: {0}", lang);
+			return;
+		}
+		
+		if (args.Length > 2)
+			PrintUsage ();
 
 		Application.Init ();
 		new SourceViewTest ();
@@ -20,7 +36,7 @@ class SourceViewTest
 
 	static void PrintUsage ()
 	{
-		Console.WriteLine ("usage: SourceViewTest.exe <csfile>");
+		Console.WriteLine ("Usage: SourceViewTest.exe filename [language]");
 		Environment.Exit (0);
 	}
 
@@ -44,8 +60,7 @@ class SourceViewTest
 
 	SourceBuffer CreateBuffer ()
 	{
-		SourceLanguage lang = SourceLanguageManager.Default.GetLanguageById ("c-sharp");
-		SourceBuffer buffer = new SourceBuffer (lang);
+		SourceBuffer buffer = new SourceBuffer (language);
 		buffer.Highlight = true;
 		StreamReader sr = File.OpenText (filename);
 		buffer.Text = sr.ReadToEnd ();
