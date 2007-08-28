@@ -1,3 +1,8 @@
+2007-08-28  Michael Hutchinson <m.j.hutchinson@gmail.com>
+
+	* gtksourceview/gtksourceview2-api.raw,
+	  gtksourceview/Makefile.am: Some more renaming.
+
 2007-08-21  Michael Hutchinson <m.j.hutchinson@gmail.com>
 
 	* sample/SourceViewTest.cs: Add an option to specify the source 
