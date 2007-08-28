@@ -2,7 +2,7 @@ LIBRARY_NAME=	gtksourceview2-sharp
 LIBRARY=	$(LIBRARY_NAME).dll
 APIS=		gtksourceview2-api.xml
 
-ASSEMBLIES=	/pkg:gnome-sharp-2.0
+ASSEMBLIES=	/pkg:gnome-sharp-2.0 /r:Mono.Posix
 
 EXTRA_DIST = $(sources) $(customs) Gtk.metadata gtksourceview2-api.raw AssemblyInfo.cs.in
 
@@ -30,12 +30,8 @@ GtkSourceView.cs
 build_sources = $(addprefix $(srcdir)/, $(sources)) AssemblyInfo.cs
 
 customs = \
-Global.custom \
 SourceBuffer.custom \
-SourceLanguage.custom \
-SourceLanguageManager.custom \
-SourceStyleScheme.custom \
-SourceTagTable.custom
+SourceLanguage.custom
 
 build_customs = $(addprefix $(srcdir)/, $(customs))
 

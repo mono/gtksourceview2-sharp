@@ -1,5 +1,23 @@
 2007-08-28  Michael Hutchinson <m.j.hutchinson@gmail.com>
 
+	* sources/makefile,
+	  sources/gtksourceview2-sharp-sources.xml,
+	  gtksourceview/gtksourceview2-api.raw,
+	  configure.in: Updated GtkSourceView version to 1.90.4.
+	  
+	* sample/SourceViewTest.cs,
+	  gtksourceview/Gtk.metadata: Updated to 1.90.4 API.
+	  
+	* gtksourceview/Makefile.am: Updated.
+	
+	* gtksourceview/SourceStyleScheme.custom,
+	  gtksourceview/SourceLanguagesManager.custom,
+	  gtksourceview/SourceLanguageManager.custom,
+	  gtksourceview/SourceTagTable.custom,
+	  gtksourceview/Global.custom: Removed, not used in 1.90.4.
+
+2007-08-28  Michael Hutchinson <m.j.hutchinson@gmail.com>
+
 	* gtksourceview/gtksourceview2-api.raw,
 	  gtksourceview/Makefile.am: Some more renaming.
 

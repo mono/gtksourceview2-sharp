@@ -20,7 +20,7 @@ class SourceViewTest
 		}
 		
 		string lang = (args.Length > 1)?  args[1] : "c-sharp";
-		language = SourceLanguageManager.Default.GetLanguageById (lang);
+		language = SourceLanguageManager.Default.GetLanguage (lang);
 		if (language == null) {
 			Console.WriteLine ("Invalid language ID: {0}", lang);
 			return;
@@ -37,6 +37,10 @@ class SourceViewTest
 	static void PrintUsage ()
 	{
 		Console.WriteLine ("Usage: SourceViewTest.exe filename [language]");
+		Console.WriteLine ("\nAvailable languages:");
+		foreach (string lang in SourceLanguageManager.Default.LanguageIds)
+			Console.WriteLine ("\t{0}", lang);
+		Console.WriteLine ();
 		Environment.Exit (0);
 	}
 
@@ -61,7 +65,8 @@ class SourceViewTest
 	SourceBuffer CreateBuffer ()
 	{
 		SourceBuffer buffer = new SourceBuffer (language);
-		buffer.Highlight = true;
+		buffer.HighlightSyntax = true;
+		buffer.HighlightMatchingBrackets = true;
 		StreamReader sr = File.OpenText (filename);
 		buffer.Text = sr.ReadToEnd ();
 		sr.Close ();
