@@ -1,24 +1,24 @@
 LIBRARY_NAME=	gtksourceview2-sharp
 LIBRARY=	$(LIBRARY_NAME).dll
-APIS=		gtksourceview-api.xml
+APIS=		gtksourceview2-api.xml
 
 ASSEMBLIES=	/pkg:gnome-sharp-2.0
 
-EXTRA_DIST = $(sources) $(customs) Gtk.metadata gtksourceview-api.raw AssemblyInfo.cs.in
+EXTRA_DIST = $(sources) $(customs) Gtk.metadata gtksourceview2-api.raw AssemblyInfo.cs.in
 
 DISTCLEANFILES = AssemblyInfo.cs
 
 noinst_DATA = gtksourceview2-sharp.dll
 
 apidir = $(gtksharp_prefix)/share/gapi-2.0
-api_DATA = gtksourceview-api.xml
+api_DATA = gtksourceview2-api.xml
 
 all: $(LIBRARY)
 
-gtksourceview-api.xml:
-	cp $(srcdir)/gtksourceview-api.raw gtksourceview-api.xml
-	chmod u+w gtksourceview-api.xml
-	$(GAPI_FIXUP) --api=gtksourceview-api.xml --metadata=$(srcdir)/Gtk.metadata
+gtksourceview2-api.xml:
+	cp $(srcdir)/gtksourceview2-api.raw gtksourceview2-api.xml
+	chmod u+w gtksourceview2-api.xml
+	$(GAPI_FIXUP) --api=gtksourceview2-api.xml --metadata=$(srcdir)/Gtk.metadata
 
 generated-stamp: $(APIS) $(customs) $(sources) Gtk.metadata
 	$(GAPI_CODEGEN) $(GTK_SHARP_CFLAGS) --generate $(APIS) \
@@ -46,7 +46,7 @@ $(LIBRARY): generated-stamp $(build_sources) gtk-sharp.snk
 	$(CSC) /unsafe /target:library $(ASSEMBLIES) \
 	generated/*.cs $(build_sources) -out:$(LIBRARY)
 
-CLEANFILES = $(LIBRARY) generated/*.cs generated-stamp gtksourceview-api.xml gtk-sharp.snk
+CLEANFILES = $(LIBRARY) generated/*.cs generated-stamp gtksourceview2-api.xml gtk-sharp.snk
 
 install-data-local:
 	echo "$(GACUTIL) /i $(LIBRARY) /f $(GACUTIL_FLAGS)";  \
