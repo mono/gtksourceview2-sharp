@@ -4,12 +4,10 @@
   <attr path="/api/namespace/object[@cname='GtkSourceBuffer']/constructor[@cname='gtk_source_buffer_new_with_language']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceBuffer']/method[@name='CanRedo']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceBuffer']/method[@name='CanUndo']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='GtkSourceMarker']" name="parent">GtkTextMark</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceUndoManager']/signal[@name='CanRedo']" name="name">CanRedoFired</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceUndoManager']/signal[@name='CanUndo']" name="name">CanUndoFired</attr>
   <attr path="//namespace" name="name">GtkSourceView</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceLanguage']/method[@name='GetMimeTypes']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceLanguageManager']/method[@name='GetLanguageIds']" name="hidden">1</attr>
-  <attr path="/api/namespace/object[@cname='GtkSourceBuffer']/method[@name='GetMarkersInRegion']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceStyleSchemeManager']/method[@name='GetSchemeIds']" name="hidden">1</attr>
 </metadata>

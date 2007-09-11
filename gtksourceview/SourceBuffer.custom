@@ -39,18 +39,6 @@ public bool BackwardSearch (Gtk.TextIter iter, string str, GtkSourceView.SourceS
 	return ret;
 }
 
-[DllImport("gtksourceview-2.0")]
-static extern IntPtr gtk_source_buffer_get_markers_in_region(IntPtr raw, ref Gtk.TextIter begin, ref Gtk.TextIter end);
-                                                                                
-public SourceMarker[] GetMarkersInRegion (Gtk.TextIter begin, Gtk.TextIter end) {
-	IntPtr raw_ret = gtk_source_buffer_get_markers_in_region (Handle, ref begin, ref end);
-	GLib.SList list = new GLib.SList (raw_ret);
-	SourceMarker[] result = new SourceMarker [list.Count];
-	for (int i = 0; i < list.Count; i++)
-		result [i] = list [i] as SourceMarker;
-	return result;
-}
-
 
 [DllImport("gtksourceview-2.0")]
 static extern IntPtr gtk_source_buffer_new_with_language(IntPtr language);

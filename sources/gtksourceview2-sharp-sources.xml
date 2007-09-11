@@ -2,7 +2,7 @@
   <api filename="../gtksourceview/gtksourceview2-api.raw">
     <library name="gtksourceview-2.0">
       <namespace name="Gtk">
-        <dir>gtksourceview-1.90.4/gtksourceview</dir>
+        <dir>gtksourceview-1.90.5/gtksourceview</dir>
       </namespace>
     </library>
   </api>

@@ -1,3 +1,16 @@
+2007-09-11  Michael Hutchinson <mhutchinson@novell.com>
+
+	* sources/makefile,
+	  sources/gtksourceview2-sharp-sources.xml,
+	  gtksourceview/gtksourceview2-api.raw,
+	  configure.in: Updated GtkSourceView version to 1.90.5.
+	  
+	* gtksourceview/SourceBuffer.custom,
+	  gtksourceview/Gtk.metadata: Updated to 1.90.5 API changes.
+
+	* sample/Makefile.am: Copy the lib into this directory for 
+	  convenience.
+
 2007-08-28  Michael Hutchinson <m.j.hutchinson@gmail.com>
 
 	* sources/makefile,
