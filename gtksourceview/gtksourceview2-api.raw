@@ -315,6 +315,9 @@
       <method name="ForceRescan" cname="gtk_source_style_scheme_manager_force_rescan">
         <return-type type="void" />
       </method>
+      <method name="GetDefault" cname="gtk_source_style_scheme_manager_get_default" shared="true">
+        <return-type type="GtkSourceStyleSchemeManager*" />
+      </method>
       <method name="GetScheme" cname="gtk_source_style_scheme_manager_get_scheme">
         <return-type type="GtkSourceStyleScheme*" />
         <parameters>
@@ -330,10 +333,17 @@
       <method name="GetType" cname="gtk_source_style_scheme_manager_get_type" shared="true">
         <return-type type="GType" />
       </method>
+      <constructor cname="gtk_source_style_scheme_manager_new" />
       <method name="PrependSearchPath" cname="gtk_source_style_scheme_manager_prepend_search_path">
         <return-type type="void" />
         <parameters>
           <parameter type="const-gchar*" name="path" />
+        </parameters>
+      </method>
+      <method name="SetSearchPath" cname="gtk_source_style_scheme_manager_set_search_path">
+        <return-type type="void" />
+        <parameters>
+          <parameter type="gchar**" name="path" />
         </parameters>
       </method>
     </object>
