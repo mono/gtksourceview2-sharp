@@ -1,3 +1,10 @@
+2007-10-29  Michael Hutchinson  <mhutchinson@novell.com>
+
+	* gtksourceview/Gtk.metadata:
+	* gtksourceview/SourceLanguage.custom: Fix some marshalling.
+	  
+	* sample/SourceViewTest.cs: Exercise one of the fixed properties.
+
 2007-09-29  Michael Hutchinson <mhutchinson@novell.com>
 
 	* sources/makefile, sources/gtksourceview2-sharp-sources.xml, 

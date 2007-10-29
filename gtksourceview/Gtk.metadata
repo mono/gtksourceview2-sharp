@@ -8,6 +8,8 @@
   <attr path="/api/namespace/object[@cname='GtkSourceUndoManager']/signal[@name='CanUndo']" name="name">CanUndoFired</attr>
   <attr path="//namespace" name="name">GtkSourceView</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceLanguage']/method[@name='GetMimeTypes']" name="hidden">1</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceLanguage']/method[@name='GetGlobs']" name="hidden">1</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceLanguage']/method[@name='GetStyleIds']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceLanguageManager']/method[@name='GetLanguageIds']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceStyleSchemeManager']/method[@name='GetSchemeIds']" name="hidden">1</attr>
 </metadata>

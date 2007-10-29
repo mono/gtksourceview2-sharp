@@ -38,8 +38,12 @@ class SourceViewTest
 	{
 		Console.WriteLine ("Usage: SourceViewTest.exe filename [language]");
 		Console.WriteLine ("\nAvailable languages:");
-		foreach (string lang in SourceLanguageManager.Default.LanguageIds)
-			Console.WriteLine ("\t{0}", lang);
+		foreach (string lang in SourceLanguageManager.Default.LanguageIds) {
+			SourceLanguage sl = SourceLanguageManager.Default.GetLanguage (lang);
+			string mimeTypes = string.Join (", ", sl.MimeTypes);
+			Console.WriteLine ("\t{0} ({1})", lang, mimeTypes);
+		}
+				
 		Console.WriteLine ();
 		Environment.Exit (0);
 	}
