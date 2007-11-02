@@ -1,3 +1,17 @@
+2007-11-02  Michael Hutchinson  <mhutchinson@novell.com>
+
+	* sample/Makefile.am: Fix dist.
+	
+	* configure.in: Knock versioning down to 1.9.x until we're ready to 
+	  make a proper release.
+	  
+	* Makefile.am:
+	* vbnet.lang:
+	* nemerle.lang: Remove .lang files, as they're distributed with GTKSV2.
+	  
+	* gtksourceview/gtksourceview2-sharp.dll.config.in: DllMap to 
+	  gtksourceview-2.0 library rather than gtksourceview-1.0.
+
 2007-10-29  Michael Hutchinson  <mhutchinson@novell.com>
 
 	* gtksourceview/Gtk.metadata:
