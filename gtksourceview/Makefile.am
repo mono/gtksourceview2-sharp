@@ -2,7 +2,7 @@ LIBRARY_NAME=	gtksourceview2-sharp
 LIBRARY=	$(LIBRARY_NAME).dll
 APIS=		gtksourceview2-api.xml
 
-ASSEMBLIES=	/pkg:gnome-sharp-2.0
+ASSEMBLIES=	/pkg:gtk-sharp-2.0
 
 EXTRA_DIST = $(sources) $(customs) Gtk.metadata gtksourceview2-api.raw AssemblyInfo.cs.in
 
