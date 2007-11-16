@@ -1,3 +1,11 @@
+2007-11-15  Michael Hutchinson  <mhutchinson@novell.com>
+
+	* sample/SourceViewTest.cs: List available styles in help message.
+	
+	* gtksourceview/SourceLanguageManager.custom:
+	* gtksourceview/Gtk.metadata: Add some custom marshalling for 
+	  a null-terminated string array property.
+
 2007-11-02  Michael Hutchinson  <mhutchinson@novell.com>
 
 	* sample/Makefile.am: Fix dist.

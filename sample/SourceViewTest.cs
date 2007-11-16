@@ -43,6 +43,10 @@ class SourceViewTest
 			string mimeTypes = string.Join (", ", sl.MimeTypes);
 			Console.WriteLine ("\t{0} ({1})", lang, mimeTypes);
 		}
+		
+		Console.WriteLine ("\nAvailable styles:");
+		foreach (string style in SourceStyleSchemeManager.Default.SchemeIds)
+			Console.WriteLine ("\t{0}", style);
 				
 		Console.WriteLine ();
 		Environment.Exit (0);

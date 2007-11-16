@@ -11,5 +11,8 @@
   <attr path="/api/namespace/object[@cname='GtkSourceLanguage']/method[@name='GetGlobs']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceLanguage']/method[@name='GetStyleIds']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceLanguageManager']/method[@name='GetLanguageIds']" name="hidden">1</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceLanguageManager']/method[@cname='gtk_source_language_manager_get_search_path']" name="hidden">1</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceLanguageManager']/method[@cname='gtk_source_language_manager_set_search_path']" name="hidden">1</attr>
+  <attr path="/api/namespace/object[@cname='GtkSourceLanguageManager']/property[@cname='search-path']" name="hidden">1</attr>
   <attr path="/api/namespace/object[@cname='GtkSourceStyleSchemeManager']/method[@name='GetSchemeIds']" name="hidden">1</attr>
 </metadata>
