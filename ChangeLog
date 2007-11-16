@@ -1,5 +1,9 @@
 2007-11-15  Geoff Norton  <gnorton@novell.com>
 
+	* gtksourceview2-sharp.pc.in: Depend against gtk-sharp-2.0 not gnome-sharp-2.0
+
+2007-11-15  Geoff Norton  <gnorton@novell.com>
+
 	* gtksourceview/Makefile.am: Compile against gtk-sharp-2.0 not gnome-sharp-2.0
 
 2007-11-15  Michael Hutchinson  <mhutchinson@novell.com>
