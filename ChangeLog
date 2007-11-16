@@ -1,3 +1,14 @@
+2007-11-16  Michael Hutchinson  <mhutchinson@novell.com>
+
+	* sample/SourceViewTest.cs: List search paths in help message.
+	
+	* gtksourceview/SourceLanguageManager.custom: Fixed some custom 
+	  marshalling thanks to ki9a on #monodevelop.
+	
+	* gtksourceview/SourceStyleSchemeManager.custom: 
+	* gtksourceview/Gtk.metadata:
+	* gtksourceview/Makefile.am: Add more custom marshalling.
+
 2007-11-15  Geoff Norton  <gnorton@novell.com>
 
 	* gtksourceview2-sharp.pc.in: Depend against gtk-sharp-2.0 not gnome-sharp-2.0

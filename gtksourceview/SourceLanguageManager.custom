@@ -1,6 +1,6 @@
 		
 		[DllImport("gtksourceview-2.0")]
-		static extern IntPtr[] gtk_source_language_manager_get_search_path(IntPtr raw);
+		static extern IntPtr gtk_source_language_manager_get_search_path(IntPtr raw);
 
 		[DllImport("gtksourceview-2.0")]
 		static extern void gtk_source_language_manager_set_search_path(IntPtr raw, IntPtr[] dirs);
@@ -8,8 +8,8 @@
 		[GLib.Property ("search-path")]
 		public string[] SearchPath {
 			get  {
-				IntPtr[] raw_ret = gtk_source_language_manager_get_search_path(Handle);
-				return GLib.Marshaller.Utf8PtrToString (raw_ret);
+				IntPtr raw_ret = gtk_source_language_manager_get_search_path(Handle);
+				return PointerToStringArray (raw_ret);
 			}
 			set  {
 				IntPtr[] ptrs = StringArrayToNullTermPointer (value);
@@ -19,8 +19,8 @@
 			}
 		}
 		
-		//copied form GLib.Marshaller trunk
-		static IntPtr[] StringArrayToNullTermPointer (string[] strs)
+		//copied from GLib.Marshaller trunk
+		internal static IntPtr[] StringArrayToNullTermPointer (string[] strs)
 		{
 			if (strs == null)
 				return new IntPtr [0];
@@ -29,4 +29,16 @@
 				result [i] = GLib.Marshaller.StringToPtrGStrdup (strs [i]);
 			result [strs.Length] = IntPtr.Zero;
 			return result;
+		}
+		
+		internal static string[] PointerToStringArray (IntPtr res)
+		{
+			ArrayList ret = new ArrayList();
+			IntPtr item;
+			do {
+				item = Marshal.ReadIntPtr (res, ret.Count * IntPtr.Size);
+				if (item != IntPtr.Zero)
+					ret.Add (GLib.Marshaller.Utf8PtrToString (item));
+			} while (item != IntPtr.Zero);
+			return (string[])ret.ToArray(typeof(string));
 		}

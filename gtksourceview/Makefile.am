@@ -30,8 +30,10 @@ GtkSourceView.cs
 build_sources = $(addprefix $(srcdir)/, $(sources)) AssemblyInfo.cs
 
 customs = \
-SourceBuffer.custom \
-SourceLanguage.custom
+	SourceBuffer.custom \
+	SourceLanguage.custom \
+	SourceLanguageManager.custom \
+	SourceStyleSchemeManager.custom
 
 build_customs = $(addprefix $(srcdir)/, $(customs))
 

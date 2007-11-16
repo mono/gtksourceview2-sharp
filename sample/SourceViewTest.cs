@@ -47,7 +47,15 @@ class SourceViewTest
 		Console.WriteLine ("\nAvailable styles:");
 		foreach (string style in SourceStyleSchemeManager.Default.SchemeIds)
 			Console.WriteLine ("\t{0}", style);
-				
+		
+		Console.WriteLine ("\nLanguage search paths:");
+		foreach (string searchPath in SourceLanguageManager.Default.SearchPath)
+			Console.WriteLine ("\t{0}", searchPath);
+		
+		Console.WriteLine ("\nStyle scheme search paths:");
+		foreach (string searchPath in SourceStyleSchemeManager.Default.SearchPath)
+			Console.WriteLine ("\t{0}", searchPath);
+			
 		Console.WriteLine ();
 		Environment.Exit (0);
 	}
